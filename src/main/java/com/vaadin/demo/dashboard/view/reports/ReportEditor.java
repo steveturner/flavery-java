@@ -304,7 +304,7 @@ public final class ReportEditor extends VerticalLayout {
     }
 
     public enum PaletteItemType {
-        TEXT("Text Block", FontAwesome.FONT), TABLE("Top 10 Movies",
+        TEXT("Text Block", FontAwesome.FONT), TABLE("Top 10 Beers",
                 FontAwesome.TABLE), CHART("Top 6 Revenue",
                 FontAwesome.BAR_CHART_O), TRANSACTIONS("Latest transactions",
                 null);

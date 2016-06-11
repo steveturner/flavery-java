@@ -12,6 +12,7 @@ import com.vaadin.addon.charts.model.PlotOptionsPie;
 import com.vaadin.demo.dashboard.DashboardUI;
 import com.vaadin.demo.dashboard.data.dummy.DummyDataGenerator;
 import com.vaadin.demo.dashboard.domain.Beer;
+import com.vaadin.demo.dashboard.domain.RawBeer;
 
 @SuppressWarnings("serial")
 public class TopSixTheatersChart extends Chart {
@@ -19,7 +20,7 @@ public class TopSixTheatersChart extends Chart {
     public TopSixTheatersChart() {
         super(ChartType.PIE);
 
-        setCaption("Popular Movies");
+        setCaption("Popular Beers");
         getConfiguration().setTitle("");
         getConfiguration().getChart().setType(ChartType.PIE);
         getConfiguration().getChart().setAnimation(false);
@@ -28,12 +29,12 @@ public class TopSixTheatersChart extends Chart {
 
         DataSeries series = new DataSeries();
 
-        List<Beer> movies = new ArrayList<Beer>(DashboardUI.getDataProvider()
-                .getMovies());
+        List<RawBeer> movies = new ArrayList<RawBeer>(DashboardUI.getDataProvider()
+                .getBeers());
         for (int i = 0; i < 6; i++) {
-            Beer movie = movies.get(i);
-            DataSeriesItem item = new DataSeriesItem(movie.getTitle(),
-                    movie.getScore());
+            RawBeer movie = movies.get(i);
+            DataSeriesItem item = new DataSeriesItem(movie.beer_name,
+                    movie.amount_used*100);
             series.add(item);
             item.setColor(DummyDataGenerator.chartColors[5 - i]);
         }

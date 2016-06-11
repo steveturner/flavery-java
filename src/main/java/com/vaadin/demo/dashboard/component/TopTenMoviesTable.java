@@ -32,6 +32,8 @@ public final class TopTenMoviesTable extends Table {
         return result;
     }
 
+
+
     public TopTenMoviesTable() {
         setCaption("Top 10 Beers by Revenue");
 

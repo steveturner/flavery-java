@@ -18,6 +18,7 @@ import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.demo.dashboard.DashboardUI;
 import com.vaadin.demo.dashboard.domain.Beer;
 import com.vaadin.demo.dashboard.domain.MovieRevenue;
+import com.vaadin.demo.dashboard.domain.RawBeer;
 import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.event.ShortcutListener;
 import com.vaadin.navigator.View;
@@ -87,7 +88,7 @@ public class SalesView extends VerticalLayout implements View {
         header.setSpacing(true);
         Responsive.makeResponsive(header);
 
-        Label titleLabel = new Label("Revenue by Movie");
+        Label titleLabel = new Label("Revenue by Beer");
         titleLabel.setSizeUndefined();
         titleLabel.addStyleName(ValoTheme.LABEL_H1);
         titleLabel.addStyleName(ValoTheme.LABEL_NO_MARGIN);

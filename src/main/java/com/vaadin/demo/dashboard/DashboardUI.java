@@ -3,6 +3,7 @@ package com.vaadin.demo.dashboard;
 import java.util.Locale;
 
 import com.google.common.eventbus.Subscribe;
+import com.vaadin.annotations.Push;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
 import com.vaadin.annotations.Widgetset;
@@ -30,6 +31,7 @@ import com.vaadin.ui.themes.ValoTheme;
 @Widgetset("com.vaadin.demo.dashboard.DashboardWidgetSet")
 @Title("FLAVERY Dashboard")
 @SuppressWarnings("serial")
+@Push
 public final class DashboardUI extends UI {
 
     /*

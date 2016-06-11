@@ -12,6 +12,7 @@ import com.vaadin.addon.charts.model.Series;
 import com.vaadin.demo.dashboard.DashboardUI;
 import com.vaadin.demo.dashboard.data.dummy.DummyDataGenerator;
 import com.vaadin.demo.dashboard.domain.Beer;
+import com.vaadin.demo.dashboard.domain.RawBeer;
 
 @SuppressWarnings("serial")
 public class TopGrossingMoviesChart extends Chart {
@@ -26,19 +27,20 @@ public class TopGrossingMoviesChart extends Chart {
         getConfiguration().getyAxis().setTitle("");
         setSizeFull();
 
-        List<Beer> movies = new ArrayList<Beer>(DashboardUI.getDataProvider()
-                .getMovies());
+        List<RawBeer> movies = new ArrayList<RawBeer>(DashboardUI.getDataProvider()
+                .getBeers());
 
         List<Series> series = new ArrayList<Series>();
         for (int i = 0; i < 6; i++) {
-            Beer movie = movies.get(i);
+            RawBeer movie = movies.get(i);
             PlotOptionsBar opts = new PlotOptionsBar();
             opts.setColor(DummyDataGenerator.chartColors[5 - i]);
             opts.setBorderWidth(0);
             opts.setShadow(false);
             opts.setPointPadding(0.4);
             opts.setAnimation(false);
-            ListSeries item = new ListSeries(movie.getTitle(), movie.getScore());
+            ListSeries item = new ListSeries(movie.beer_name, movie.amount_used * 1000);
+
             item.setPlotOptions(opts);
             series.add(item);
 

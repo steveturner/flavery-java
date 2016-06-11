@@ -6,6 +6,7 @@ import java.util.Date;
 import com.vaadin.demo.dashboard.domain.DashboardNotification;
 import com.vaadin.demo.dashboard.domain.Beer;
 import com.vaadin.demo.dashboard.domain.MovieRevenue;
+import com.vaadin.demo.dashboard.domain.RawBeer;
 import com.vaadin.demo.dashboard.domain.Transaction;
 import com.vaadin.demo.dashboard.domain.User;
 
@@ -34,7 +35,7 @@ public interface DataProvider {
 
 
 
-    Beer getBeer(String movieId);
+    RawBeer getBeer(String movieId);
     /**
      * @param userName
      * @param password
@@ -61,6 +62,8 @@ public interface DataProvider {
      * @return A Collection of movies.
      */
     Collection<Beer> getMovies();
+
+    Collection<RawBeer> getBeers();
 
     /**
      * @param movieId
