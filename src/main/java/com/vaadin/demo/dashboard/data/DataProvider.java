@@ -4,13 +4,13 @@ import java.util.Collection;
 import java.util.Date;
 
 import com.vaadin.demo.dashboard.domain.DashboardNotification;
-import com.vaadin.demo.dashboard.domain.Movie;
+import com.vaadin.demo.dashboard.domain.Beer;
 import com.vaadin.demo.dashboard.domain.MovieRevenue;
 import com.vaadin.demo.dashboard.domain.Transaction;
 import com.vaadin.demo.dashboard.domain.User;
 
 /**
- * QuickTickets Dashboard backend API.
+ * FLAVERY Dashboard backend API.
  */
 public interface DataProvider {
     /**
@@ -32,6 +32,9 @@ public interface DataProvider {
      */
     Collection<MovieRevenue> getTotalMovieRevenues();
 
+
+
+    Beer getBeer(String movieId);
     /**
      * @param userName
      * @param password
@@ -57,14 +60,14 @@ public interface DataProvider {
     /**
      * @return A Collection of movies.
      */
-    Collection<Movie> getMovies();
+    Collection<Beer> getMovies();
 
     /**
      * @param movieId
      *            Movie's identifier
      * @return A Movie instance for the given id.
      */
-    Movie getMovie(long movieId);
+    Beer getMovie(long movieId);
 
     /**
      * @param startDate

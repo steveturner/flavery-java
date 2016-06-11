@@ -16,7 +16,7 @@ import com.vaadin.data.Container;
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.demo.dashboard.DashboardUI;
-import com.vaadin.demo.dashboard.domain.Movie;
+import com.vaadin.demo.dashboard.domain.Beer;
 import com.vaadin.demo.dashboard.domain.MovieRevenue;
 import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.event.ShortcutListener;
@@ -62,9 +62,9 @@ public class SalesView extends VerticalLayout implements View {
 
         initMovieSelect();
         // Add first 4 by default
-        List<Movie> subList = new ArrayList<Movie>(DashboardUI
+        List<Beer> subList = new ArrayList<Beer>(DashboardUI
                 .getDataProvider().getMovies()).subList(0, 4);
-        for (Movie m : subList) {
+        for (Beer m : subList) {
             addDataSet(m);
         }
 
@@ -76,8 +76,8 @@ public class SalesView extends VerticalLayout implements View {
     }
 
     private void initMovieSelect() {
-        Collection<Movie> movies = DashboardUI.getDataProvider().getMovies();
-        Container movieContainer = new ListContainer<Movie>(Movie.class, movies);
+        Collection<Beer> movies = DashboardUI.getDataProvider().getMovies();
+        Container movieContainer = new ListContainer<Beer>(Beer.class, movies);
         movieSelect.setContainerDataSource(movieContainer);
     }
 
@@ -107,7 +107,7 @@ public class SalesView extends VerticalLayout implements View {
                 KeyCode.ENTER, null) {
             @Override
             public void handleAction(final Object sender, final Object target) {
-                addDataSet((Movie) movieSelect.getValue());
+                addDataSet((Beer) movieSelect.getValue());
             }
         });
 
@@ -141,7 +141,7 @@ public class SalesView extends VerticalLayout implements View {
         add.addClickListener(new ClickListener() {
             @Override
             public void buttonClick(final ClickEvent event) {
-                addDataSet((Movie) movieSelect.getValue());
+                addDataSet((Beer) movieSelect.getValue());
                 clear.setEnabled(true);
             }
         });
@@ -160,7 +160,7 @@ public class SalesView extends VerticalLayout implements View {
         return result;
     }
 
-    private void addDataSet(final Movie movie) {
+    private void addDataSet(final Beer movie) {
         movieSelect.removeItem(movie);
         movieSelect.setValue(null);
 

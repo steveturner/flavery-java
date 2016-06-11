@@ -1,9 +1,9 @@
-Vaadin QuickTickets Dashboard Demo
+Vaadin FLAVERY Dashboard Demo
 ==================================
 
 Sources for the official [Vaadin](https://vaadin.com) demo application: http://demo.vaadin.com/dashboard
 
-![QuickTickets Dashboard](https://vaadin.com/documents/10187/2487938/Dashboard+Demo+2014/a37b2c4d-c941-48fe-97c3-ad5a60586882?t=1412769929183)
+![FLAVERY Dashboard](https://vaadin.com/documents/10187/2487938/Dashboard+Demo+2014/a37b2c4d-c941-48fe-97c3-ad5a60586882?t=1412769929183)
 
 Running the App
 ==

@@ -3,7 +3,7 @@ package com.vaadin.demo.dashboard.component;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.vaadin.demo.dashboard.domain.Movie;
+import com.vaadin.demo.dashboard.domain.Beer;
 import com.vaadin.demo.dashboard.event.DashboardEvent.CloseOpenWindowsEvent;
 import com.vaadin.demo.dashboard.event.DashboardEventBus;
 import com.vaadin.event.ShortcutAction.KeyCode;
@@ -29,7 +29,7 @@ public final class MovieDetailsWindow extends Window {
 
     private final Label synopsis = new Label();
 
-    private MovieDetailsWindow(final Movie movie, final Date startTime,
+    private MovieDetailsWindow(final Beer movie, final Date startTime,
             final Date endTime) {
         addStyleName("moviedetailswindow");
         Responsive.makeResponsive(this);
@@ -75,7 +75,7 @@ public final class MovieDetailsWindow extends Window {
         return footer;
     }
 
-    private Component buildMovieDetails(final Movie movie,
+    private Component buildMovieDetails(final Beer movie,
             final Date startTime, final Date endTime) {
         HorizontalLayout details = new HorizontalLayout();
         details.setWidth(100.0f, Unit.PERCENTAGE);
@@ -95,7 +95,7 @@ public final class MovieDetailsWindow extends Window {
         return details;
     }
 
-    private Component buildDetailsForm(final Movie movie, final Date startTime,
+    private Component buildDetailsForm(final Beer movie, final Date startTime,
             final Date endTime) {
         FormLayout fields = new FormLayout();
         fields.setSpacing(false);
@@ -149,7 +149,7 @@ public final class MovieDetailsWindow extends Window {
         return fields;
     }
 
-    private void updateSynopsis(final Movie m, final boolean expand) {
+    private void updateSynopsis(final Beer m, final boolean expand) {
         String synopsisText = synopsis.getData().toString();
         if (m != null) {
             synopsisText = m.getSynopsis();
@@ -163,7 +163,7 @@ public final class MovieDetailsWindow extends Window {
         synopsis.setValue(synopsisText);
     }
 
-    public static void open(final Movie movie, final Date startTime,
+    public static void open(final Beer movie, final Date startTime,
             final Date endTime) {
         DashboardEventBus.post(new CloseOpenWindowsEvent());
         Window w = new MovieDetailsWindow(movie, startTime, endTime);

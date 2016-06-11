@@ -11,7 +11,7 @@ import com.vaadin.addon.charts.model.DataSeriesItem;
 import com.vaadin.addon.charts.model.PlotOptionsPie;
 import com.vaadin.demo.dashboard.DashboardUI;
 import com.vaadin.demo.dashboard.data.dummy.DummyDataGenerator;
-import com.vaadin.demo.dashboard.domain.Movie;
+import com.vaadin.demo.dashboard.domain.Beer;
 
 @SuppressWarnings("serial")
 public class TopSixTheatersChart extends Chart {
@@ -28,10 +28,10 @@ public class TopSixTheatersChart extends Chart {
 
         DataSeries series = new DataSeries();
 
-        List<Movie> movies = new ArrayList<Movie>(DashboardUI.getDataProvider()
+        List<Beer> movies = new ArrayList<Beer>(DashboardUI.getDataProvider()
                 .getMovies());
         for (int i = 0; i < 6; i++) {
-            Movie movie = movies.get(i);
+            Beer movie = movies.get(i);
             DataSeriesItem item = new DataSeriesItem(movie.getTitle(),
                     movie.getScore());
             series.add(item);

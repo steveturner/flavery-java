@@ -33,7 +33,7 @@ public final class TopTenMoviesTable extends Table {
     }
 
     public TopTenMoviesTable() {
-        setCaption("Top 10 Titles by Revenue");
+        setCaption("Top 10 Beers by Revenue");
 
         addStyleName(ValoTheme.TABLE_BORDERLESS);
         addStyleName(ValoTheme.TABLE_NO_STRIPES);

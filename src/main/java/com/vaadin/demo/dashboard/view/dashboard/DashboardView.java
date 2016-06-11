@@ -113,7 +113,7 @@ public final class DashboardView extends Panel implements View,
         header.addStyleName("viewheader");
         header.setSpacing(true);
 
-        titleLabel = new Label("Dashboard");
+        titleLabel = new Label("Flavery");
         titleLabel.setId(TITLE_ID);
         titleLabel.setSizeUndefined();
         titleLabel.addStyleName(ValoTheme.LABEL_H1);
@@ -165,7 +165,6 @@ public final class DashboardView extends Panel implements View,
         Responsive.makeResponsive(dashboardPanels);
 
         dashboardPanels.addComponent(buildTopGrossingMovies());
-        dashboardPanels.addComponent(buildNotes());
         dashboardPanels.addComponent(buildTop10TitlesByRevenue());
         dashboardPanels.addComponent(buildPopularMovies());
 

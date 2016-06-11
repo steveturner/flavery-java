@@ -2,7 +2,7 @@ package com.vaadin.demo.dashboard.domain;
 
 import java.util.Date;
 
-public final class Movie {
+public final class Beer {
     private long id;
     private String title;
     private String synopsis;

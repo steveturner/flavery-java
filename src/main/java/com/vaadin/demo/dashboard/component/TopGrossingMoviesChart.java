@@ -11,13 +11,13 @@ import com.vaadin.addon.charts.model.PlotOptionsBar;
 import com.vaadin.addon.charts.model.Series;
 import com.vaadin.demo.dashboard.DashboardUI;
 import com.vaadin.demo.dashboard.data.dummy.DummyDataGenerator;
-import com.vaadin.demo.dashboard.domain.Movie;
+import com.vaadin.demo.dashboard.domain.Beer;
 
 @SuppressWarnings("serial")
 public class TopGrossingMoviesChart extends Chart {
 
     public TopGrossingMoviesChart() {
-        setCaption("Top Grossing Movies");
+        setCaption("Top Grossing Beers");
         getConfiguration().setTitle("");
         getConfiguration().getChart().setType(ChartType.BAR);
         getConfiguration().getChart().setAnimation(false);
@@ -26,12 +26,12 @@ public class TopGrossingMoviesChart extends Chart {
         getConfiguration().getyAxis().setTitle("");
         setSizeFull();
 
-        List<Movie> movies = new ArrayList<Movie>(DashboardUI.getDataProvider()
+        List<Beer> movies = new ArrayList<Beer>(DashboardUI.getDataProvider()
                 .getMovies());
 
         List<Series> series = new ArrayList<Series>();
         for (int i = 0; i < 6; i++) {
-            Movie movie = movies.get(i);
+            Beer movie = movies.get(i);
             PlotOptionsBar opts = new PlotOptionsBar();
             opts.setColor(DummyDataGenerator.chartColors[5 - i]);
             opts.setBorderWidth(0);
