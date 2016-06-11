@@ -551,7 +551,8 @@ public class DummyDataProvider implements DataProvider {
 
     @Override
     public Beer getBeer(String movieId) {
-        beersMap.get(movieId);
+        //beersMap.get(movieId);
+        return null;
     }
 
     @Override
